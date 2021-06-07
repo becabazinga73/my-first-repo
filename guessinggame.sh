@@ -3,7 +3,7 @@
 
 function guess_file_count {
 
-      correct_guess=0
+      correct_guess=3
       do
 echo "Type in a guess and then press Enter:"
 read guess
