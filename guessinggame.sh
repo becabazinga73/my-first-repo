@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
 # File: guessinggame.sh
 
-echo "Type in a string and then press Enter:"
-read response
-if [[ $response -eq 3 ]]
+function guess_file_count {
+
+      correct_guess=0
+      do
+echo "Type in a guess and then press Enter:"
+read guess
+if [[ $guess =~ ^/s*$ || $guess =~ [^0-9]+ ]]
 then
-  echo "$response is right, congrats"
-elif [[ $response -gt 2 ]]
+echo "Your guess should be a number!"
+elif [[ $guess -gt 3 ]]
 then
-  echo "$response is a righ guess, try again"
+  echo "$response is to righ, try again"
+elif [[ $guess -lt 3 ]]
+then
+  echo "$guess is too low, try again"
 else
-  echo "$response is a low guess, try again"
+  echo "$response is right, congrats!"
 
 fi 
 
